@@ -1,5 +1,5 @@
 # Algorithms
-Implementations of foundational algorithms in Computer Science
+Implementations of foundational algorithms and data structures in Computer Science
 
 ## Learning goals
 
@@ -8,7 +8,7 @@ Implementations of foundational algorithms in Computer Science
 
 ## CLRS
 
-The first collection of algorithms I plan to implement are from the infamous "Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald Rivest, Clifford Stein (also known as CLRS). For now, I will be implementing the algorithms from the 3rd edition but plan to update it with the content from the 4th edition when available (sometime after March 2022).
+The first collection of algorithms and data structures I plan to implement are from the infamous "Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald Rivest, Clifford Stein (also known as CLRS). For now, I will be implementing the algorithms from the 3rd edition but plan to update it with the content from the 4th edition when available (sometime after March 2022).
 
 Here's a **TODO** list tracking how much I've implemented so far:
 
