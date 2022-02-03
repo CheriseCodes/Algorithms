@@ -4,9 +4,9 @@
 #include "algoutils.h"
 
 int main() {
-    std::vector<int> in_list = generate_random_input(10);
+    std::vector<int> in_list = generate_random_int_vector(10);
     print_vector(in_list);
-    insertion_sort(in_list);
+    heap_sort(in_list);
     print_vector(in_list);
     return 0;
 }

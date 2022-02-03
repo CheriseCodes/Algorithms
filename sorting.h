@@ -5,6 +5,10 @@
 
 void insertion_sort(std::vector<int> & in_list);
 
-std::vector<int> generate_random_input(int v_size);
-    
+void max_heapify(std::vector<int> & in_list, int idx);
+
+void build_max_heap(std::vector<int> & in_list);
+
+void heap_sort(std::vector<int> & in_list);
+
 #endif  // SORTING_H_

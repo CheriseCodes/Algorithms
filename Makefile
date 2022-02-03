@@ -2,7 +2,7 @@
 # make        # compile all binary
 # make clean  # remove ALL binaries and objects
 
-CC = g++
+CC = clang++
 
 all: main
 
