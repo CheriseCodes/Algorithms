@@ -15,7 +15,7 @@ Here's a **TODO** list tracking how much I've implemented so far:
 #### Sorting
 
 - [x] Insertion sort
-- [ ] Heapsort
+- [x] Heapsort
 - [ ] Quicksort
 - [ ] Counting sort
 - [ ] Radix sort
