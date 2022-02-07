@@ -11,4 +11,6 @@ void build_max_heap(std::vector<int> & in_list);
 
 void heap_sort(std::vector<int> & in_list);
 
+void quick_sort(std::vector<int> & in_list, int start_idx, int end_idx);
+
 #endif  // SORTING_H_

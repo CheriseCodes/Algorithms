@@ -45,6 +45,37 @@ void build_max_heap(std::vector<int> & in_list) {
     }
 }
 
+int partition(std::vector<int> & in_list, int start_idx, int end_idx) {
+    // Assumes start_idx < end_idx
+    int last_item = in_list[end_idx];
+    int i = start_idx -1;
+    int temp;
+    int j = 1;
+    for (j = start_idx; j < end_idx; j++) {
+        //print_vector(in_list);
+        //std::cout << "i: " << i << " j: " << j <<  std::endl;
+        if (in_list[j] <= last_item) {
+            temp = in_list[++i];
+            in_list[i] = in_list[j];
+            in_list[j] = temp;
+        }
+    }
+    temp = in_list[++i];
+    in_list[i] = in_list[j];
+    in_list[j] = temp;
+    return i++;
+}
+
+void quick_sort(std::vector<int> & in_list, int start_idx, int end_idx) {
+    if (start_idx < end_idx) {
+        int mid_point = partition(in_list, start_idx, end_idx);
+        //std::cout << "mid_point: " << mid_point << std::endl;
+        quick_sort(in_list, start_idx, mid_point-1);
+        quick_sort(in_list, mid_point+1, end_idx);
+    }
+
+}
+
 void heap_sort(std::vector<int> & in_list) {
     build_max_heap(in_list);
     int len = in_list.size() - 1;

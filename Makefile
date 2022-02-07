@@ -3,20 +3,21 @@
 # make clean  # remove ALL binaries and objects
 
 CC = clang++
+OPTIONS = -std=c++20 -Wall
 
 all: main
 
 main: main.o sorting.o
 	@echo "Checking.."
-	$(CC) -v -o main main.cc sorting.cc
+	$(CC) $(OPTIONS) -v -o main main.cc sorting.cc
 
 sorting.o: sorting.cc
 	@echo "Creating object sorting.o.."
-	$(CC) -c sorting.cc
+	$(CC) $(OPTIONS) -c sorting.cc
 
 main.o: main.cc
 	@echo "Creating object main.o.."
-	$(CC) -c main.cc
+	$(CC) $(OPTIONS) -c main.cc
 
 clean:
 	@echo "Cleaning up..."
