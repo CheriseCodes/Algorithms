@@ -26,7 +26,7 @@ Here's a **TODO** list tracking how much I've implemented so far:
 - [ ] Minimum
 - [ ] Randomized Select
 
-#### Data Structures (will use the STL for algorithms that use elementary data structures)
+#### Data Structures (will use the STL for data structures that use elementary data structures)
 - [ ] Stack
 - [ ] Queue
 - [ ] Linked List
