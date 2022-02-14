@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <cmath>
+#include <random>
 //#include "algoutils.h"
 
 int parent(int idx) {
@@ -66,14 +67,34 @@ int partition(std::vector<int> & in_list, int start_idx, int end_idx) {
     return i++;
 }
 
-void quick_sort(std::vector<int> & in_list, int start_idx, int end_idx) {
+int randomized_partition(std::vector<int> & in_list, int start_idx, int end_idx) {
+    std::random_device rd;
+    std::mt19937 gen(rd()); 
+    std::uniform_int_distribution<> distrib(start_idx, end_idx);
+    distrib(gen);
+    int i = distrib(gen);
+    int temp = in_list[end_idx];
+    in_list[end_idx] = in_list[i];
+    in_list[i] = temp;
+    return partition(in_list,start_idx, end_idx);
+}
+void randomized_quick_sort(std::vector<int> & in_list, int start_idx, int end_idx) {
+    int mid_point;
     if (start_idx < end_idx) {
-        int mid_point = partition(in_list, start_idx, end_idx);
+        mid_point = randomized_partition(in_list, start_idx, end_idx);
+        randomized_quick_sort(in_list, start_idx, mid_point - 1);
+        randomized_quick_sort(in_list, mid_point + 1, end_idx);
+    }
+}
+
+void quick_sort(std::vector<int> & in_list, int start_idx, int end_idx) {
+    int mid_point;
+    if (start_idx < end_idx) {
+        mid_point = partition(in_list, start_idx, end_idx);
         //std::cout << "mid_point: " << mid_point << std::endl;
         quick_sort(in_list, start_idx, mid_point-1);
         quick_sort(in_list, mid_point+1, end_idx);
     }
-
 }
 
 void heap_sort(std::vector<int> & in_list) {

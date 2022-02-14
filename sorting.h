@@ -13,4 +13,6 @@ void heap_sort(std::vector<int> & in_list);
 
 void quick_sort(std::vector<int> & in_list, int start_idx, int end_idx);
 
+void randomized_quick_sort(std::vector<int> & in_list, int start_idx, int end_idx);
+
 #endif  // SORTING_H_
