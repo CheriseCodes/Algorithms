@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cmath>
 #include <random>
-//#include "algoutils.h"
 
 int parent(int idx) {
     return floor((double)idx/2);
@@ -53,8 +52,6 @@ int partition(std::vector<int> & in_list, int start_idx, int end_idx) {
     int temp;
     int j = 1;
     for (j = start_idx; j < end_idx; j++) {
-        //print_vector(in_list);
-        //std::cout << "i: " << i << " j: " << j <<  std::endl;
         if (in_list[j] <= last_item) {
             temp = in_list[++i];
             in_list[i] = in_list[j];
@@ -91,7 +88,6 @@ void quick_sort(std::vector<int> & in_list, int start_idx, int end_idx) {
     int mid_point;
     if (start_idx < end_idx) {
         mid_point = partition(in_list, start_idx, end_idx);
-        //std::cout << "mid_point: " << mid_point << std::endl;
         quick_sort(in_list, start_idx, mid_point-1);
         quick_sort(in_list, mid_point+1, end_idx);
     }
@@ -120,6 +116,27 @@ void insertion_sort(std::vector<int> & in_list) {
             --i;
         }
         in_list[i+1] = key;
-        //print_vector(in_list);
+    }
+}
+
+void counting_sort(std::vector<int> & in_list, std::vector<int> & out_list, int k) {
+    std::vector<int> counts;
+    int in_list_size = in_list.size();
+    int i;
+    for (i = 0; i < k+1; i++) {
+        counts.push_back(0);
+    }
+    // count the number of occurrences of each value
+    for (i = 0; i < in_list_size; ++i) {
+        counts[in_list[i]]++;
+    }
+    // count the number of elements less than or equal to each element
+    for (i = 1; i < in_list_size; i++) {
+        counts[i] = counts[i] + counts[i-1];
+    }
+    // create the sorted array based on counts
+    for (i = in_list_size -1; i > -1; i--) {
+        out_list[counts[in_list[i]]-1] = in_list[i];
+        counts[in_list[i]] = counts[in_list[i]] - 1;
     }
 }
