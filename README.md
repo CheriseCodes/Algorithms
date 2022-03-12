@@ -1,6 +1,12 @@
 # Algorithms
 Implementations of foundational algorithms and data structures in Computer Science
 
+# Usage
+
+```bash
+make
+./main
+```
 ## Learning goals
 
 1. Review foundational algorithms and data structures
@@ -19,7 +25,7 @@ Here's a **TODO** list tracking how much I've implemented so far:
 - [x] Quicksort
 - [x] Randomized Quick Sort
 - [x] Counting sort
-- [ ] Radix sort
+- [x] Radix sort
 - [ ] Bucket sort
 
 #### Order Statistics

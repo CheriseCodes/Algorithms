@@ -14,6 +14,8 @@ void quick_sort(std::vector<int> & in_list, int start_idx, int end_idx);
 
 void randomized_quick_sort(std::vector<int> & in_list, int start_idx, int end_idx);
 
-void counting_sort(std::vector<int> & in_list, std::vector<int> & out_list, int k);
+void counting_sort(std::vector<int> & in_list, std::vector<int> & out_list, int sig_digit);
+
+void radix_sort(std::vector<int> & in_list);
 
 #endif  // SORTING_H_

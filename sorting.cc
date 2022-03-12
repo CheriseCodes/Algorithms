@@ -2,6 +2,10 @@
 #include <iostream>
 #include <cmath>
 #include <random>
+#include <algorithm>
+#include <map>
+#include <iterator>
+
 
 int parent(int idx) {
     return floor((double)idx/2);
@@ -118,25 +122,61 @@ void insertion_sort(std::vector<int> & in_list) {
         in_list[i+1] = key;
     }
 }
-
-void counting_sort(std::vector<int> & in_list, std::vector<int> & out_list, int k) {
-    std::vector<int> counts;
-    int in_list_size = in_list.size();
-    int i;
-    for (i = 0; i < k+1; i++) {
-        counts.push_back(0);
+/*
+template <typename T>
+void print_vector(std::vector<T> & v) {
+    int len = v.size();
+    if (len == 0) std::cout << "v = { }\n";
+    std::cout << "v = { " << v[0];
+    for (int i = 1; i < len ; i++) {
+        std::cout << ", " << v[i] ;
     }
+    std::cout << " }; \n";
+}*/
+
+/*
+Assumes every element in in_list is in the range [0, k]
+*/
+void counting_sort(std::vector<int> & in_list, std::vector<int> & out_list, int sig_digit) {
+    
+    int in_list_size = in_list.size();
+    // create new array of significant digits
+    std::vector<int> counts(10,0);
+    int i;
     // count the number of occurrences of each value
     for (i = 0; i < in_list_size; ++i) {
-        counts[in_list[i]]++;
+        counts[(in_list[i] / sig_digit) % 10]++;
     }
     // count the number of elements less than or equal to each element
-    for (i = 1; i < in_list_size; i++) {
-        counts[i] = counts[i] + counts[i-1];
+    for (i = 1; i < 10; i++) {
+        counts[i] += counts[i-1];
     }
     // create the sorted array based on counts
+    int j;
     for (i = in_list_size -1; i > -1; i--) {
-        out_list[counts[in_list[i]]-1] = in_list[i];
-        counts[in_list[i]] = counts[in_list[i]] - 1;
+        j = (in_list[i] / sig_digit) % 10;
+        out_list[counts[j]-1] = in_list[i];
+        counts[j]--;
     }
+}
+/*
+void print_map(std::map<int, int> in_map) {
+    for(std::map<int, int>::iterator it = in_map.begin(); it != in_map.end(); ++it) {
+            std::cout << it->first << " " << it->second << "\n";
+        }
+}*/
+
+// Sorts vectors where all the elements have a constant number of digits
+void radix_sort(std::vector<int> & in_list) {
+    int max = std::max_element(in_list.begin(), in_list.end())[0];
+    int in_list_size = in_list.size();
+    std::vector<int> out_list(in_list_size, 0);
+
+    int exp_acc; // exponential accumulator for powers of 10
+    // perform stable counting sort on each digit from least significant
+    // to most significant
+    for (exp_acc = 1; max / exp_acc > 0; exp_acc*=10) {
+            counting_sort(in_list,out_list, exp_acc);
+            in_list = out_list;
+        }
 }
