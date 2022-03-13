@@ -14,7 +14,7 @@ make
 
 ## CLRS
 
-The first collection of algorithms and data structures I plan to implement are from the infamous "Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald Rivest, Clifford Stein (also known as CLRS). For now, I will be implementing the algorithms from the 3rd edition but plan to update it with the content from the 4th edition when available (sometime after March 2022).
+The first collection of algorithms and data structures I plan to implement are from the infamous "Introduction to Algorithms" (3rd edition) by Thomas H. Cormen, Charles E. Leiserson, Ronald Rivest, Clifford Stein (also known as CLRS).
 
 Here's a **TODO** list tracking how much I've implemented so far:
 
@@ -26,12 +26,12 @@ Here's a **TODO** list tracking how much I've implemented so far:
 - [x] Randomized Quick Sort
 - [x] Counting sort
 - [x] Radix sort
-- [ ] Bucket sort
+- [x] Bucket sort
 
 #### Order Statistics
-- [ ] Maximum
-- [ ] Minimum
-- [ ] Randomized Select
+- [] Maximum
+- [] Minimum
+- [] Randomized Select
 
 #### Data Structures (will use the STL for data structures that use elementary data structures)
 - [ ] Stack
