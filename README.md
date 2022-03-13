@@ -29,9 +29,9 @@ Here's a **TODO** list tracking how much I've implemented so far:
 - [x] Bucket sort
 
 #### Order Statistics
-- [] Maximum
-- [] Minimum
-- [] Randomized Select
+- [ ] Maximum
+- [ ] Minimum
+- [ ] Randomized Select
 
 #### Data Structures (will use the STL for data structures that use elementary data structures)
 - [ ] Stack
