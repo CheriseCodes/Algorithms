@@ -5,7 +5,17 @@
 #include <algorithm>
 #include <map>
 #include <iterator>
+#include <forward_list>
 
+/*
+Notes on sorting:
+- In place: Sorts the array such that only using a constant amount of 
+  additional space
+- Stable: Sort the array such that item appear in the same order as
+  in the input array
+- Being able to make an assumption about the input and designing 
+the algorithm around that assumption can reduce runtimes
+*/
 
 int parent(int idx) {
     return floor((double)idx/2);
@@ -179,4 +189,32 @@ void radix_sort(std::vector<int> & in_list) {
             counting_sort(in_list,out_list, exp_acc);
             in_list = out_list;
         }
+}
+
+/**
+ * @brief Assumes that input is drawn from a uniform distribution
+ *  of [0, 1).
+ * Average run time: O(n)
+ */
+void bucket_sort(std::vector<double> & in_list) {
+    std::vector<std::forward_list<double>> bucket(10,std::forward_list<double>(0));
+    int list_size = in_list.size();
+    // assign each item to it's correct bucket range
+    for (double num : in_list) {
+        bucket[floor(list_size*num)].push_front(num);
+    }
+    int i;
+    // sort each bucket range
+    for (i=0; i < 10;i++) {
+        bucket[i].sort();
+    }
+    // combine the bucket ranges to form the output list
+    int j = 0;
+    for (i=0; i < 10;i++) {
+        for (double num: bucket[i]) {
+            in_list[j] = num;
+            j++;
+        }
+    }
+
 }

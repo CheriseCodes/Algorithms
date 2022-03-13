@@ -18,4 +18,6 @@ void counting_sort(std::vector<int> & in_list, std::vector<int> & out_list, int 
 
 void radix_sort(std::vector<int> & in_list);
 
+void bucket_sort(std::vector<double> & in_list);
+
 #endif  // SORTING_H_
