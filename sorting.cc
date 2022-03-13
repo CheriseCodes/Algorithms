@@ -197,21 +197,21 @@ void radix_sort(std::vector<int> & in_list) {
  * Average run time: O(n)
  */
 void bucket_sort(std::vector<double> & in_list) {
-    std::vector<std::forward_list<double>> bucket(10,std::forward_list<double>(0));
+    std::vector<std::forward_list<double>> buckets(10,std::forward_list<double>(0));
     int list_size = in_list.size();
     // assign each item to it's correct bucket range
     for (double num : in_list) {
-        bucket[floor(list_size*num)].push_front(num);
+        buckets[floor(list_size*num)].push_front(num);
     }
     int i;
     // sort each bucket range
     for (i=0; i < 10;i++) {
-        bucket[i].sort();
+        buckets[i].sort();
     }
     // combine the bucket ranges to form the output list
     int j = 0;
     for (i=0; i < 10;i++) {
-        for (double num: bucket[i]) {
+        for (double num: buckets[i]) {
             in_list[j] = num;
             j++;
         }
