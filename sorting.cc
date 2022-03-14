@@ -9,9 +9,9 @@
 
 /*
 Notes on sorting:
-- In place: Sorts the array such that only using a constant amount of 
-  additional space
-- Stable: Sort the array such that item appear in the same order as
+- In place: Sort the array such that only a constant amount of 
+  additional space is used
+- Stable: Sort the array such that items appear in the same order as
   in the input array
 - Being able to make an assumption about the input and designing 
 the algorithm around that assumption can reduce runtimes
