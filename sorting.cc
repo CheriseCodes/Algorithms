@@ -7,6 +7,7 @@
 #include <iterator>
 #include <forward_list>
 
+
 /*
 Notes on sorting:
 - In place: Sort the array such that only a constant amount of 
@@ -83,7 +84,7 @@ int randomized_partition(std::vector<int> & in_list, int start_idx, int end_idx)
     std::mt19937 gen(rd()); 
     std::uniform_int_distribution<> distrib(start_idx, end_idx);
     distrib(gen);
-    int i = distrib(gen);
+    int i = abs(distrib(gen)) % (in_list.size());
     int temp = in_list[end_idx];
     in_list[end_idx] = in_list[i];
     in_list[i] = temp;
@@ -132,21 +133,15 @@ void insertion_sort(std::vector<int> & in_list) {
         in_list[i+1] = key;
     }
 }
-/*
-template <typename T>
-void print_vector(std::vector<T> & v) {
-    int len = v.size();
-    if (len == 0) std::cout << "v = { }\n";
-    std::cout << "v = { " << v[0];
-    for (int i = 1; i < len ; i++) {
-        std::cout << ", " << v[i] ;
-    }
-    std::cout << " }; \n";
-}*/
 
-/*
-Assumes every element in in_list is in the range [0, k]
-*/
+/**
+ * @brief 
+ * 
+ * @param in_list : vector of integers
+ * @param out_list : vector of integers that is the same size as in_list
+ * @param sig_digit : choice of 10^i for i >= 0, such that (num / sig_digit) % 10
+ *  retrieves the i-th significant digit
+ */
 void counting_sort(std::vector<int> & in_list, std::vector<int> & out_list, int sig_digit) {
     
     int in_list_size = in_list.size();
@@ -169,12 +164,6 @@ void counting_sort(std::vector<int> & in_list, std::vector<int> & out_list, int 
         counts[j]--;
     }
 }
-/*
-void print_map(std::map<int, int> in_map) {
-    for(std::map<int, int>::iterator it = in_map.begin(); it != in_map.end(); ++it) {
-            std::cout << it->first << " " << it->second << "\n";
-        }
-}*/
 
 // Sorts vectors where all the elements have a constant number of digits
 void radix_sort(std::vector<int> & in_list) {

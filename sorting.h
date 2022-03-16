@@ -1,7 +1,6 @@
 #ifndef SORTING_H_
 #define SORTING_H_
 
-#include <vector>
 void insertion_sort(std::vector<int> & in_list);
 
 void max_heapify(std::vector<int> & in_list, int idx);
@@ -19,5 +18,7 @@ void counting_sort(std::vector<int> & in_list, std::vector<int> & out_list, int 
 void radix_sort(std::vector<int> & in_list);
 
 void bucket_sort(std::vector<double> & in_list);
+
+int randomized_partition(std::vector<int> & in_list, int start_idx, int end_idx);
 
 #endif  // SORTING_H_
