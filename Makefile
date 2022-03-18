@@ -5,11 +5,12 @@
 CC = clang++
 OPTIONS = -std=c++20 -stdlib=libc++ -Wall -g
 
-all: main
-
-main: main.cc order_statistics.cc sorting.cc algoutils.cc
+order_statistics: main.cc order_statistics.cc sorting.cc algoutils.cc
 	@echo "Checking.."
 	$(CC) $(OPTIONS) -v -o main main.cc order_statistics.cc sorting.cc algoutils.cc
+stack: main.cc stack.h
+	@echo "Checking.."
+	$(CC) $(OPTIONS) -v -o main main.cc
 
 clean:
 	@echo "Cleaning up..."

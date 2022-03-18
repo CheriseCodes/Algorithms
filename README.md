@@ -34,7 +34,7 @@ Here's a **TODO** list tracking how much I've implemented so far:
 - [X] Randomized Select
 
 #### Data Structures (will use the STL for data structures that use elementary data structures)
-- [ ] Stack
+- [X] Stack
 - [ ] Queue
 - [ ] Linked List
 - [ ] Direct Access Table

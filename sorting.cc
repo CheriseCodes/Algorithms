@@ -135,7 +135,7 @@ void insertion_sort(std::vector<int> & in_list) {
 }
 
 /**
- * @brief 
+ * @brief Sorts a vector of integers using the counting sort algorithm
  * 
  * @param in_list : vector of integers
  * @param out_list : vector of integers that is the same size as in_list
@@ -181,8 +181,8 @@ void radix_sort(std::vector<int> & in_list) {
 }
 
 /**
- * @brief Assumes that input is drawn from a uniform distribution
- *  of [0, 1).
+ * @brief Sorts a vector of integers using the bucket sort algorithm. Assumes 
+ * that input is drawn from a uniform distribution of [0, 1).
  * Average run time: O(n)
  */
 void bucket_sort(std::vector<double> & in_list) {
