@@ -25,7 +25,7 @@ void Stack<T,max_size>::push(T item) {
 template <typename T, int max_size>
 T Stack<T, max_size>::pop() {
     if (empty())
-        throw std::underflow_error("stack underflow");
+        throw std::underflow_error("can't pop from empty stack");
     
     return arr_[top_--];
 }
