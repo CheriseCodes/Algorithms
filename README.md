@@ -35,8 +35,9 @@ Here's a **TODO** list tracking how much I've implemented so far:
 
 #### Data Structures (will use the STL for data structures that use elementary data structures)
 - [X] Stack
-- [ ] Queue
+- [X] Queue
 - [ ] Linked List
+- [ ] Pointer
 - [ ] Direct Access Table
 - [ ] Hash Table
 - [ ] Binary Search Tree

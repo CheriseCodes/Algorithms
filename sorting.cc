@@ -95,7 +95,7 @@ void randomized_quick_sort(std::vector<int> & in_list, int start_idx, int end_id
     if (start_idx < end_idx) {
         mid_point = randomized_partition(in_list, start_idx, end_idx);
         randomized_quick_sort(in_list, start_idx, mid_point - 1);
-        randomized_quick_sort(in_list, mid_point + 1, end_idx);
+        randomized_quick_sort(in_list, mid_point + 1, end_idx); // TODO: Make iterative
     }
 }
 
@@ -104,7 +104,7 @@ void quick_sort(std::vector<int> & in_list, int start_idx, int end_idx) {
     if (start_idx < end_idx) {
         mid_point = partition(in_list, start_idx, end_idx);
         quick_sort(in_list, start_idx, mid_point-1);
-        quick_sort(in_list, mid_point+1, end_idx);
+        quick_sort(in_list, mid_point+1, end_idx); // TODO: Make iterative
     }
 }
 

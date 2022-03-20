@@ -12,6 +12,10 @@ stack: main.cc stack.h
 	@echo "Checking.."
 	$(CC) $(OPTIONS) -v -o main main.cc
 
+queue: main.cc queue.h
+	@echo "Checking.."
+	$(CC) $(OPTIONS) -v -o main main.cc
+
 clean:
 	@echo "Cleaning up..."
 	rm -rvf sorting.o main.o main

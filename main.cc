@@ -1,16 +1,45 @@
 #include <iostream>
 #include <vector>
-#include "stack.h"
+#include "queue.h"
 
 int main() {
-    const int stack_size = 10;
-    Stack my_stack = Stack<int, stack_size>();
-    std::cout << "empty: " << my_stack.empty() << " top: "<< my_stack.top() << std::endl;
-    my_stack.push(1);
-    std::cout << "empty: " << my_stack.empty() << " top: "<< my_stack.top() << std::endl;
-    my_stack.push(2);
-    std::cout << "empty: " << my_stack.empty() << " top: "<< my_stack.top() << std::endl;
-    int popped = my_stack.pop();
-    std::cout << "empty: " << my_stack.empty() << " top: "<< my_stack.top() << " popped: " << popped << std::endl;
+    const int queue_size = 2;
+    Queue my_queue = Queue<int, queue_size>();
+    puts("Init empty queue...");
+    std::cout << "head_: " << my_queue.head() << " tail_: " << my_queue.tail() << std::endl;
+    std::cout << "empty: " << my_queue.empty() << " full: " << my_queue.full() << " peek: "<< my_queue.peek() << std::endl;
+    my_queue.enqueue(1);
+    puts("Enqueue 1...");
+    std::cout << "head_: " << my_queue.head() << " tail_: " << my_queue.tail() << std::endl;
+    std::cout << "empty: " << my_queue.empty() << " full: " << my_queue.full() << " peek: "<< my_queue.peek() << std::endl;
+    my_queue.enqueue(2);
+    puts("Enqueue 2...");
+    std::cout << "head_: " << my_queue.head() << " tail_: " << my_queue.tail() << std::endl;
+    std::cout << "empty: " << my_queue.empty() << " full: " << my_queue.full() << " peek: "<< my_queue.peek() << std::endl;
+    int dequeued = my_queue.dequeue();
+    puts("Dequeue...");
+    std::cout << "head_: " << my_queue.head() << " tail_: " << my_queue.tail() << std::endl;
+    std::cout << "empty: " << my_queue.empty() << " full: " << my_queue.full() << " peek: "<< my_queue.peek() << " dequeued: " << dequeued << std::endl;
+    dequeued = my_queue.dequeue();
+    puts("Dequeue...");
+    std::cout << "head_: " << my_queue.head() << " tail_: " << my_queue.tail() << std::endl;
+    std::cout << "empty: " << my_queue.empty() << " full: " << my_queue.full() << " peek: "<< my_queue.peek() << " dequeued: " << dequeued << std::endl;
+    my_queue.enqueue(3);
+    puts("Enqueue 3...");
+    std::cout << "head_: " << my_queue.head() << " tail_: " << my_queue.tail() << std::endl;
+    std::cout << "empty: " << my_queue.empty() << " full: " << my_queue.full() << " peek: "<< my_queue.peek() << std::endl;
+    my_queue.enqueue(4);
+    puts("Enqueue 4...");
+    std::cout << "head_: " << my_queue.head() << " tail_: " << my_queue.tail() << std::endl;
+    std::cout << "empty: " << my_queue.empty() << " full: " << my_queue.full() << " peek: "<< my_queue.peek() << std::endl;
+    dequeued = my_queue.dequeue();
+    puts("Dequeue...");
+    std::cout << "head_: " << my_queue.head() << " tail_: " << my_queue.tail() << std::endl;
+    std::cout << "empty: " << my_queue.empty() << " full: " << my_queue.full() << " peek: "<< my_queue.peek() << " dequeued: " << dequeued << std::endl;
+    dequeued = my_queue.dequeue();
+    puts("Dequeue...");
+    std::cout << "head_: " << my_queue.head() << " tail_: " << my_queue.tail() << std::endl;
+    std::cout << "empty: " << my_queue.empty() << " full: " << my_queue.full() << " peek: "<< my_queue.peek() << " dequeued: " << dequeued << std::endl;
+    
     return 0;
 }
