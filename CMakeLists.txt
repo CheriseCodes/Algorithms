@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
-set(This Algorithms)
+set(This AlgorithmsReview)
 
 project(${This} CXX)
 
@@ -25,10 +25,7 @@ set (Sources
     main.cc
     order_statistics.cc
     sorting.cc
-    test.cc
 )
-
-add_library(${This})
 
 add_library(${This} STATIC ${Sources} ${Headers})
 
