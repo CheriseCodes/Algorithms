@@ -5,7 +5,7 @@
 #include <map>
 
 template <typename T>
-constexpr void print_vector(std::vector<T> & v) {
+void print_vector(std::vector<T> & v) {
     int len = v.size();
     if (len == 0) std::cout << "v = { }\n";
     std::cout << "v = { " << v[0];
@@ -16,7 +16,7 @@ constexpr void print_vector(std::vector<T> & v) {
 }
 
 template <typename T>
-constexpr void print_vector_with_indices(std::vector<T> & v) {
+void print_vector_with_indices(std::vector<T> & v) {
     int len = v.size();
     if (len == 0) std::cout << "v = { }\n";
     std::cout << "v = { " << 0 << ": " << v[0];
