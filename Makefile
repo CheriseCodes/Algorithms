@@ -5,6 +5,10 @@
 CC = clang++
 OPTIONS = -std=c++20 -stdlib=libc++ -Wall -g
 
+linked_list: main.cc linked_list.h
+	@echo "Checking.."
+	$(CC) $(OPTIONS) -v -o main main.cc
+
 order_statistics: main.cc order_statistics.cc sorting.cc algoutils.cc
 	@echo "Checking.."
 	$(CC) $(OPTIONS) -v -o main main.cc order_statistics.cc sorting.cc algoutils.cc
