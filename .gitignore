@@ -37,3 +37,4 @@
 NOTES.md
 main
 *.dSYM/
+build/
